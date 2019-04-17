@@ -11,6 +11,7 @@ RUN apk add --update alpine-sdk openssl-dev zlib-dev \
     && make \
     && cp wrk .. \
     && cd .. \
-    && rm -rf wrk2
+    && rm -rf wrk2 \
+    && apk del git alpine-sdk
 
 ENTRYPOINT ["/wrk2/wrk"]
